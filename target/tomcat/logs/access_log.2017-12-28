@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:22 +0800] "GET /sdnweb HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:22 +0800] "GET /sdnweb/ HTTP/1.1" 302 - http-bio-8080-exec-2 115
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:22 +0800] "GET /sdnweb/toIndex;jsessionid=C46B3C78C31B95161399A45127A357DF HTTP/1.1" 200 5769 http-bio-8080-exec-3 55
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:22 +0800] "GET /sdnweb/js/echarts.min.js HTTP/1.1" 304 - http-bio-8080-exec-4 13
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:23 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [28/Dec/2017:21:17:23 +0800] "POST /sdnweb/generateNodes HTTP/1.1" 200 1414 http-bio-8080-exec-5 106
