@@ -3,6 +3,7 @@ package cn.jxy.sdnweb.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.jxy.sdnweb.entity.Node;
 import cn.jxy.sdnweb.entity.NodeRelation;
 /**
  * 
@@ -58,6 +59,9 @@ public class NodesUtil {
 				}
 			}
 		}
+		
+		//for(int i=0;i<)
+		
 		return list;
 	}
 	

@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import cn.jxy.sdnweb.dao.INodeDao;
-import cn.jxy.sdnweb.entity.NodeRelation;
+import cn.jxy.sdnweb.entity.Node;
 import cn.jxy.sdnweb.service.INodeService;
 import cn.jxy.sdnweb.util.PageCut;
 @Service
@@ -15,42 +15,30 @@ public class NodeServiceImpl implements INodeService {
 	private INodeDao nodeDao;
 	
 	@Override
-	public boolean add(NodeRelation nodeRelation) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean add(Node node) {
+		return nodeDao.add(node);
 	}
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
+		return nodeDao.delete(id);
+	}
+
+	@Override
+	public boolean update(Node node) {
 		return false;
 	}
 
 	@Override
-	public boolean update(NodeRelation nodeRelation) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public NodeRelation findOne(String condition, Object... objects) {
+	public Node findOne(String condition, Object... objects) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PageCut<NodeRelation> finds(int curr, int size, String condition, Object... objects) {
-		// TODO Auto-generated method stub
-		return null;
+	public PageCut<Node> finds(int curr, int size, String condition, Object... objects) {
+		return nodeDao.finds(curr, size, condition, objects);
 	}
 
-	public INodeDao getNodeDao() {
-		return nodeDao;
-	}
-
-	public void setNodeDao(INodeDao nodeDao) {
-		this.nodeDao = nodeDao;
-	}
-	
 	
 }

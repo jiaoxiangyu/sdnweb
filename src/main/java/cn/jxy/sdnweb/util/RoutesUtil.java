@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
+import cn.jxy.sdnweb.entity.Node;
 import cn.jxy.sdnweb.entity.NodeRelation;
 /**
  * 

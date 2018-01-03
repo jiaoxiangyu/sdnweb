@@ -4,7 +4,9 @@ import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 
+import cn.jxy.sdnweb.service.IWeightService;
 import cn.jxy.sdnweb.service.INodeService;
+import cn.jxy.sdnweb.service.IUserService;
 
 
 public class BaseController {
@@ -19,6 +21,12 @@ public class BaseController {
 	
 	@Resource
 	protected INodeService nodeService;
+	
+	@Resource
+	protected IWeightService weightService;
+	
+	@Resource
+	protected IUserService userService;
 	
 	
 }

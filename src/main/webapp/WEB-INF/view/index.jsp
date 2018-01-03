@@ -1,63 +1,142 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>sdn水下传感器网络初始化最大权值路由系统</title>
-<link rel="stylesheet" href="css/bootstrap.css">
-
+		<link rel="stylesheet" type="text/css" href="${rootPath}css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="${rootPath}css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="${rootPath}css/theme.css" />
+		<link rel="stylesheet" type="text/css" href="${rootPath}images/icons/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="${rootPath}css/index.css"/>
 </head>
-<body>
-	<div style="width: 50%;height:800px;float: left;">
-		<div id="main" style="width: 100%;height:500px;"></div>
-		<div  style="width: 100%;height:300px;background-color: #F8F8F8;">
-			
-			节点数：<input type="text" id="num" >
-			<input type="button" value="生成节点" onclick="generateNodes();">
-			
-			<br>
-			<br>
-			 
-			开始节点：<input type="text" id="start">
-			结束节点：<input type="text" id="end">
-			<input type="button" value="开始" onclick="_getRoutes();">
-			<input type="button" value="下一步" onclick="_nextRoutes();">
-			<input type="button" value="重置节点" onclick="resetNodes();" >
-			<br>
-			<br>
-			<div id="maxWeight" ></div>			
-			<br>
-			<br>
-			<div id="msg" style="color: red;"></div>
-		</div>
-	</div>
-	
-	<div style="width:  50%;height:800px;background-color:#DDDDFF;float: left;">
-	   <table id="myTable" class="table table-striped table-hover " >	  
-		  <thead>
-		    <tr>	      
-		      <th>编号</th>
-		      <th>路径</th>
-		      <th>权值</th>	  
-		      <th>长度</th>	     
-		    </tr>
-		  </thead>	  
-		  <tbody id="myTbody" >	  	
-		  </tbody>
-	  </table>
-	</div>
+<body>	
+	<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">sdn水下传感器网络初始化最大权值路由系统</a>
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav pull-left">
+	                    	<ul class="nav nvabar-nav">
+                                <li class="active"><a href="${rootPath}weight/toIndex">首页</a></li>
+	                                <li><a href="${rootPath}node/find">节点管理</a></li>
+	                                <li><a href="${rootPath}weight/find">权值管理</a></li>
+	                                 <c:if test="${user.type=='管理员'}">
+		                            	<li><a href="${rootPath}user/find">用户管理</a></li>
+		                             </c:if>
+		                             <li><a href="${rootPath}show.jsp">说明书</a></li>
+		                             <li><a href="${rootPath}welcome.jsp">关于我们</a></li>
+	                        </ul> 
+                       
+                    </ul>
+                    <ul class="nav pull-right">
+                    	<ul class="nav nvabar-nav">
+                                
+                                <li><a href="${rootPath}/user/toUpdate?id=${user.id}"><span><img src="${rootPath}images/user.png" width="20px" height="28px"/><span style="padding-top:5px">${user.username}</span></span></a></li>
+                                <li><a href="${rootPath}logout"><span><img src="${rootPath}images/logout.png" width="20px" height="28px"/></span></a></li>
+                            </ul>
+                    </ul>
+                </div>
+                <!-- /.nav-collapse -->
+            </div>
+        </div>
+        <!-- /navbar-inner -->
+      </div>
+		<div class="wrapper"> 
+		         		<div class="left">
+		         			<div id="main" style="width: 100%;height:500px;font-size: 20px;">
+		         			<h2>&nbsp;sdn水下传感器网络图</h2>
+		         			</div>
+							<div  style="width: 100%;height:300px;padding-top:20px;padding-left:20px;">
+								
+								节点数：<input type="text" id="num" style="width:90px;">
+								<input type="button" value="生成节点" onclick="generateNodes();" class="btn btn-default btn-primary" style="margin-top:-10px;margin-left:10px">
+								
+								<br>
+								 
+								 开始节点名称：<select id="start" style="width:50px;margin-right:15px">
+								 		<option>A</option>
+								 		<option>B</option>
+								 		<option>C</option>
+								 		<option>D</option>
+								 		<option>E</option>
+								 		<option>F</option>
+								 		<option>G</option>
+								 		<option>H</option>
+								 		<option>I</option>
+								 </select>
+								 结束节点名称：<select id="end" style="width:50px;">
+								 		<option>A</option>
+								 		<option>B</option>
+								 		<option>C</option>
+								 		<option>D</option>
+								 		<option>E</option>
+								 		<option>F</option>
+								 		<option>G</option>
+								 		<option>H</option>
+								 		<option>I</option>
+								 </select>
+								<input type="button" value="开始" onclick="_getRoutes();" class="btn btn-default btn-primary" style="margin-top:-10px;margin-left:10px">
+								<input type="button" value="下一步" onclick="_nextRoutes();" class="btn btn-default btn-primary" style="margin-top:-10px;margin-left:10px">
+								<input type="button" value="重置节点" onclick="resetNodes();" class="btn btn-default btn-primary" style="margin-top:-10px;margin-left:10px">
+								
+								<div id="maxWeight" style="color: green;" ></div>			
+								<div id="msg" style="color: red;padding-top: 10px;"></div>
+								
+							</div>
+		         		</div>
+		         		<div class="right">
+		         			<div class="tablelist"> 
+		         				<table id="myTable" class="table table-striped table-hover " >
+		         				<caption style="padding:8px "><h4>路 径 表</h4></caption>	  
+								  <thead>
+								    <tr>	      
+								      <th>编号</th>
+								      <th>路径</th>
+								      <th>权值</th>	  
+								      <th>长度</th>	     
+								    </tr>
+								  </thead>	  
+								  <tbody id="myTbody" >	  	
+								  </tbody>
+							  </table>        				
+		         			</div>
+		         		</div>
+		      <!--/.container-->
+		</div>  
+	  <div class="footer">
+          <div class="container">
+              <p>本项目由河南科技学院提供技术支持，版权所有</p>
+          </div>
+      </div>
 	
 	<!-- 引入 ECharts 文件 -->
-    <script src="js/echarts.min.js"></script>
-    
+    <script src="${rootPath}js/echarts.min.js"></script>
+    <script src="${rootPath}js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var height = $(window).height()-60;
+			if(height<600)
+				height = 600;
+			$(".left").height(height);
+			$(".right").height(height);
+		})
+	</script>
+		
 <script type="text/javascript">
- /* window.onload=function(){ 
-	
-	 _getNodes("5");
-	
-} */
+
+window.onload=function(){ 
+		if(${nodes!=null}){
+			
+		}else{
+			getOldNodes();
+		}
+		
+		
+} 
 /*
  * 生成节点
  */
@@ -120,50 +199,64 @@ function _getRoutes(){
 		_deleteMaxWeight();
 		var start=document.getElementById("start").value; 
 		var end=document.getElementById("end").value;
-		
-	    var xmlhttp;  
-		if (window.XMLHttpRequest) {
-			// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-			xmlhttp = new XMLHttpRequest();
-		} else {
-			// IE6, IE5 浏览器执行代码
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {		
-				var result =xmlhttp.responseText;
-				if(result!=null && result!="" && result!=[]){
-					var json = eval("(" + result + ")");
-					if(json!=null && json!="" && json!=[]){
-						//生成路径表
-						var _routess=new Array();
-						_routess=json[0];
-						if(_routess!=null && _routess!="" && _routess!=[]){
-							generaterRoutes(_routess);
+		if(start=="" || end==""){
+			_deleteMsg();
+			_setMsg("节点名称不能为空");
+		}else if(start==end){
+			_deleteMsg();
+			_setMsg("两节点名称不能相同");
+		}else{
+			 var xmlhttp;  
+				if (window.XMLHttpRequest) {
+					// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+					xmlhttp = new XMLHttpRequest();
+				} else {
+					// IE6, IE5 浏览器执行代码
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {		
+						var result =xmlhttp.responseText;
+						if(result!=null && result!="" && result!=[]){
+							var json = eval("(" + result + ")");
+							if(json!=null && json!="" && json!=[]){
+								//生成路径表
+								var _routess=new Array();
+								_routess=json[0];
+								if(_routess!=null && _routess!="" && _routess!=[]){
+									generaterRoutes(_routess);
+								}else{
+									_deleteMsg();
+									_setMsg("请输入正确的节点名称");
+								}
+								
+								//画图
+								var _nodes=new Array();
+								_nodes=json[1];
+								
+								var _relations=new Array();
+								_relations=json[2];
+								
+								if(_nodes!=null && _nodes!="" && _relations!=null && _relations!="" ){
+									_draw(_nodes,_relations);
+								}
+								
+							}else{
+								_deleteMsg();
+								_setMsg("请输入正确的节点名称");
+							}
+						}else{
+							_deleteMsg();
+							_setMsg("请先输入节点数初始化拓补图");
 						}
-						
-						//画图
-						var _nodes=new Array();
-						_nodes=json[1];
-						
-						var _relations=new Array();
-						_relations=json[2];
-						
-						if(_nodes!=null && _nodes!="" && _relations!=null && _relations!="" ){
-							_draw(_nodes,_relations);
-						}
-						
-					}else{
-						_deleteMsg();
-						_setMsg("请输入正确的节点名称");
 					}
 				}
-			}
+				xmlhttp.open("POST", "getRoutes", true);
+				xmlhttp.setRequestHeader("Content-type",
+						"application/x-www-form-urlencoded");
+				xmlhttp.send("start="+start+"&end="+end);
 		}
-		xmlhttp.open("POST", "getRoutes", true);
-		xmlhttp.setRequestHeader("Content-type",
-				"application/x-www-form-urlencoded");
-		xmlhttp.send("start="+start+"&end="+end);
+	   
 } 
 
 /* 生成路径表 */
@@ -317,6 +410,47 @@ function _getNodes(num){
 		xmlhttp.send("num="+num);
 } 
 
+/**
+ * 根据数据库中的节点画图 
+ */
+function getOldNodes(){
+	var xmlhttp;  
+	if (window.XMLHttpRequest) {
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		// IE6, IE5 浏览器执行代码
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {		
+			var result = xmlhttp.responseText;
+			if(result!=null && result!=[] && result!=""){
+				var json = eval("(" + result + ")");
+				
+				//节点
+				var _nodes=new Array(); 
+				_nodes=json[0];
+    	
+		    	//节点权值
+		    	var _relations=new Array(); 
+				_relations=json[1];
+   				
+				//画图
+				if(_nodes!=null && _nodes!="" && _relations!=null && _relations!=""){
+					_draw(_nodes,_relations); 
+				}
+		    	
+			}
+ 	
+		}
+	}
+	xmlhttp.open("GET", "getOldNodes", true);
+	/* xmlhttp.setRequestHeader("Content-type",
+			"application/x-www-form-urlencoded"); */
+	xmlhttp.send();
+}
+
 /*
  * 画图
  */
@@ -354,7 +488,7 @@ function _draw(_nodes,_relations) {
 	var  option = {
 	 backgroundColor: '#F0F0F0',
 	 title: {
-	     text: 'sdn水下传感器网络',
+	     text: 'sdn水下传感器网络图',
 	 },
 	 tooltip:{},
 	 animationDurationUpdate: 1500,
@@ -496,7 +630,7 @@ function resetNodes() {
 
 
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>	
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>	
 </body>
 </html>

@@ -58,6 +58,18 @@ public class BaseDao<T> {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param Name（类名）
+	 * @return
+	 */
+	
+	protected final boolean deleteAll(String Name){
+		Query query = this.getSession().createQuery("delete from "+Name);		
+		query.executeUpdate();
+		return true;
+	}
+	
 	@SuppressWarnings("unchecked")
 	protected final T getEntity(int id){
 		return (T)this.getSession().get(clazz, id);
