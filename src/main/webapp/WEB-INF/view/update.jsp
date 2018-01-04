@@ -18,7 +18,7 @@
 	          <div class="navbar-inner">
 	              <div class="container-fluid">
 	                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">sdn水下传感器网络初始化最大权值路由系统</a>
+	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="${rootPath}weight/toIndex">sdn水下传感器网络初始化最大权值路由系统</a>
 	                  <div class="nav-collapse collapse navbar-inverse-collapse">
 	                      <ul class="nav pull-left">
 	                      	<ul class="nav nvabar-nav">
@@ -64,7 +64,18 @@
 					<input type="text" class="form-control"  disabled="disabled"
 			  	 placeholder="${userInfo.type}" name="type" value="${userInfo.type}">
 				</c:if>
-				
+				<c:if test="${user.type=='管理员'}">
+					<select class="form-group" name="type">
+						<c:if test="${userInfo.type=='管理员'}">
+							<option value="管理员">管理员</option>
+							<option value="普通用户">普通用户</option>
+						</c:if>
+						<c:if test="${userInfo.type=='普通用户'}">
+							<option value="普通用户">普通用户</option>
+							<option value="管理员">管理员</option>
+						</c:if>
+					</select>
+				</c:if>
 				
 			</div>
 			<div class="form-group">

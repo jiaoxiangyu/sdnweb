@@ -19,7 +19,7 @@
 	          <div class="navbar-inner">
 	              <div class="container-fluid">
 	                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">sdn水下传感器网络初始化最大权值路由系统</a>
+	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="${rootPath}weight/toIndex">sdn水下传感器网络初始化最大权值路由系统</a>
 	                  <div class="nav-collapse collapse navbar-inverse-collapse">
 	                      <ul class="nav pull-left">
 	                      	<ul class="nav nvabar-nav">
@@ -63,10 +63,10 @@
 					<span style="text-indent: 40px;">如您在使用过程中出现问题，无法正常使用该系统，请阅读说明书,然后进行操作
 					</span>
 					<p>如有技术问题，请联系我们</p>
-					<p>责任人:</p>
-					<p>联系QQ:</p>
-					<p>技术支持:</p>
-					<p>版权所有:</p>
+					<p>责任人:焦祥宇</p>
+					<p>联系QQ:1062100557</p>
+					<p>技术支持:河南科技学院javaweb第六组</p>
+					<p>版权所有:河南科技学院</p>
 				</div>
 			</div>
        	</div>

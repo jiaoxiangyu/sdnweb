@@ -26,7 +26,7 @@
 	          <div class="navbar-inner">
 	              <div class="container-fluid">
 	                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">sdn水下传感器网络初始化最大权值路由系统</a>
+	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="${rootPath}weight/toIndex">sdn水下传感器网络初始化最大权值路由系统</a>
 	                  <div class="nav-collapse collapse navbar-inverse-collapse">
 	                      <ul class="nav pull-left">
 	                      	<ul class="nav nvabar-nav">

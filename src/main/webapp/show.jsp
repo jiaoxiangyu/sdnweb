@@ -19,7 +19,7 @@
 	          <div class="navbar-inner">
 	              <div class="container-fluid">
 	                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">sdn水下传感器网络初始化最大权值路由系统</a>
+	                      <i class="icon-reorder shaded"></i></a><a class="brand" href="${rootPath}weight/toIndex">sdn水下传感器网络初始化最大权值路由系统</a>
 	                  <div class="nav-collapse collapse navbar-inverse-collapse">
 	                      <ul class="nav pull-left">
 	                      	<ul class="nav nvabar-nav">
@@ -56,7 +56,7 @@
            		 <div class="introduce">
            		 	<h4>欢迎您阅读说明书，本项目模拟的水下的传感器网络,进行网络的模拟，由于浏览器无法承受10万条路径，所以本次选取5个节点来进行数据的说明，如果你输入的点数太多，可能需要很多时间</h4>
            		 	<img src="images/map1.png" alt="散点图" />
-           		 	<h4>1.在输入框输入1-10的数字，点击生成节点按钮，上图将自动生成散点图</h4>
+           		 	<h4>1.在输入框输入2-9的数字，点击生成节点按钮，上图将自动生成散点图</h4>
            		 	<h4>2.在开始的节点和结束的节点有两个下拉框，可以根据你的意愿，惊醒点的选取</h4>
            		 	<h4>3.选后点后，点击开始按钮，路由表就会出现，就如上图所示</h4>
            		 	<h4>4.点击下一步，系统会找到最大权值，进行减操作，直到生成最大权值的路径为止</h4>
