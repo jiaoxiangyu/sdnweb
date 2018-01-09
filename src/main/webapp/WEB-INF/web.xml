@@ -66,7 +66,15 @@
     <url-pattern>/weight/*</url-pattern>
   </filter-mapping>
 	
-	
+   <filter>
+    <filter-name>excelFilter</filter-name>
+    <filter-class>cn.jxy.sdnweb.filter.ExcelFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>excelFilter</filter-name>
+    <url-pattern>/excel/*</url-pattern>
+  </filter-mapping>
+  
   <filter>
     <filter-name>SpringOpenSessionInViewFilter</filter-name>
     <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter

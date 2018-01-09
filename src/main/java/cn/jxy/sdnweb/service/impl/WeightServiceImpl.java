@@ -8,6 +8,11 @@ import cn.jxy.sdnweb.dao.IWeightDao;
 import cn.jxy.sdnweb.entity.NodeRelation;
 import cn.jxy.sdnweb.service.IWeightService;
 import cn.jxy.sdnweb.util.PageCut;
+/***
+ * 
+ * @author Administrator
+ * 路径业务层
+ */
 @Service
 public class WeightServiceImpl implements IWeightService {
 

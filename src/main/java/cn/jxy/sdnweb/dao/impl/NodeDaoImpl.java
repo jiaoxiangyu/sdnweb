@@ -8,7 +8,11 @@ import cn.jxy.sdnweb.dao.IWeightDao;
 import cn.jxy.sdnweb.entity.Node;
 import cn.jxy.sdnweb.entity.NodeRelation;
 import cn.jxy.sdnweb.util.PageCut;
-
+/**
+ * 节点数据层
+ * @author Administrator
+ *
+ */
 @Repository
 public class NodeDaoImpl extends BaseDao<Node> implements INodeDao {
 

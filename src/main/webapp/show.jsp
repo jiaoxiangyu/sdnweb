@@ -38,7 +38,7 @@
 	                <ul class="nav pull-right">
                     		<ul class="nav nvabar-nav">
                                 
-                                <li><a href="${rootPath}/user/toUpdate?id=${user.id}"><span><img src="${rootPath}images/user.png" width="20px" height="28px"/><span style="padding-top:5px">${user.username}</span></span></a></li>
+                                <li><a href="${rootPath}user/toUpdate?id=${user.id}"><span><img src="${rootPath}images/user.png" width="20px" height="28px"/><span style="padding-top:5px">${user.username}</span></span></a></li>
                                 <li><a href="${rootPath}logout"><span><img src="${rootPath}images/logout.png" width="20px" height="28px"/></span></a></li>
                             </ul>
                     </ul>
@@ -55,17 +55,17 @@
            		 </div>
            		 <div class="introduce">
            		 	<h4>欢迎您阅读说明书，本项目模拟的水下的传感器网络,进行网络的模拟，由于浏览器无法承受10万条路径，所以本次选取5个节点来进行数据的说明，如果你输入的点数太多，可能需要很多时间</h4>
-           		 	<img src="images/map1.png" alt="散点图" />
-           		 	<h4>1.在输入框输入2-9的数字，点击生成节点按钮，上图将自动生成散点图</h4>
-           		 	<h4>2.在开始的节点和结束的节点有两个下拉框，可以根据你的意愿，惊醒点的选取</h4>
+           		 	<img src="images/map2.png" alt="散点图" width="720px" height="331px"/>
+           		 	<h4>1.在下拉框选择2-9的数字，点击生成节点按钮，上图将自动生成散点图</h4>
+           		 	<h4>2.在开始的节点和结束的节点有两个下拉框，可以根据你的意愿，进行点的选取</h4>
            		 	<h4>3.选后点后，点击开始按钮，路由表就会出现，就如上图所示</h4>
            		 	<h4>4.点击下一步，系统会找到最大权值，进行减操作，直到生成最大权值的路径为止</h4>
-           		 	<img src="images/map2.png" alt="权值减操作" width="720px" height="331px"/>
-           		 	<img src="images/map3.png" alt="权值减操作" />
-           		 	<img src="images/map4.png" alt="权值减操作" />
-           		 	<img src="images/map5.png" alt="权值减操作" />
+           		 	<img src="images/map3.png" alt="权值减操作" width="720px" height="331px"/>
+           		 	<img src="images/map4.png" alt="权值减操作" width="720px" height="331px"/>
+           		 	<img src="images/map5.png" alt="权值减操作" width="720px" height="331px"/>
+           		 	<img src="images/map6.png" alt="权值减操作" width="720px" height="331px"/>
            		 	<h4 style="margin-top: 40px;">最后的结果是：</h4>
-           		 	<img src="images/map6.png" alt="最后的结果" />
+           		 	<img src="images/map7.png" alt="最后的结果" width="720px" height="331px"/>
            		 </div>
         	</div>
 	</div> 

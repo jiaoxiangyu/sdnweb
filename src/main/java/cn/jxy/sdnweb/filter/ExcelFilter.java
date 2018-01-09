@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -15,23 +16,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import cn.jxy.sdnweb.entity.User;
+import cn.jxy.sdnweb.util.Routes;
 
 
 
 
 
 /**
- * Servlet Filter implementation class LoginFilter
+ * Servlet Filter implementation class ExcelFilter
  */
 
-public class LoginFilter implements Filter {
+public class ExcelFilter implements Filter {
 	
 	private FilterConfig Config;
 	
 	/**
 	 * Default constructor.
 	 */
-	public LoginFilter() {
+	public ExcelFilter() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -52,12 +54,12 @@ public class LoginFilter implements Filter {
 		response.setContentType("text/html; charset=UTF-8"); // 转码
 		HttpServletRequest hRequest = (HttpServletRequest) request;
 		
-		User user = (User) hRequest.getSession().getAttribute("user");// 获得登陆用户
-		String returnUrl = hRequest.getContextPath() + "/index.jsp";
+		List<Routes> routess = (List<Routes>) hRequest.getSession().getAttribute("routess");// 获得登陆用户
+		String returnUrl = hRequest.getContextPath() + "/weight/toIndex";
 		
-		if(user==null){
+		if(routess==null){
 			response.getWriter()
-			.println("<script language=\"javascript\">" +"alert(\"登录失效！请重新登录\");"+ "if(window.opener==null){window.top.location.href=\""
+			.println("<script language=\"javascript\">" +"alert(\"路由表为空！无法导出\");"+ "if(window.opener==null){window.top.location.href=\""
 					+ returnUrl + "\";}else{window.opener.top.location.href=\"" + returnUrl
 					+ "\";window.close();}</script>");
 			return;

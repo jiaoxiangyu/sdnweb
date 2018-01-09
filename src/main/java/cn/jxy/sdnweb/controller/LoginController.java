@@ -9,7 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.jxy.sdnweb.base.BaseController;
 import cn.jxy.sdnweb.entity.User;
-
+/**
+ * 
+ * @author Administrator
+ *	登录控制类
+ */
 @Controller
 @RequestMapping("/")
 public class LoginController extends BaseController{

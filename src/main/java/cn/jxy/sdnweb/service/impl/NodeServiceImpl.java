@@ -1,13 +1,17 @@
 package cn.jxy.sdnweb.service.impl;
 
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
 
 import cn.jxy.sdnweb.dao.INodeDao;
 import cn.jxy.sdnweb.entity.Node;
 import cn.jxy.sdnweb.service.INodeService;
 import cn.jxy.sdnweb.util.PageCut;
+/**
+ * 节点业务层
+ * @author Administrator
+ *
+ */
 @Service
 public class NodeServiceImpl implements INodeService {
 

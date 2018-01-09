@@ -123,8 +123,6 @@ public class NodesUtil {
 	}
 	
 	
-	
-	
 	public static void main(String[] args) {
 		/*Node A=new Node("A",1,1);
 		Node B=new Node("C",3,3);

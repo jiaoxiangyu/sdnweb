@@ -2,7 +2,12 @@ package cn.jxy.sdnweb.util;
 
 import java.util.LinkedList;
 import java.util.List;
-
+/**
+ * 
+ * @author Administrator
+ * @param <T>
+ * 分页工具类
+ */
 public class PageCut<T> {
 	private int currentPage;//当前第几页
 	private int pageSize;//每页的数量

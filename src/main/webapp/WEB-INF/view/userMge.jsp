@@ -45,7 +45,7 @@
 	                <ul class="nav pull-right">
                     		<ul class="nav nvabar-nav">
                                 
-                                <li><a href="${rootPath}/user/toUpdate?id=${user.id}"><span><img src="${rootPath}images/user.png" width="20px" height="28px"/><span style="padding-top:5px">${user.username}</span></span></a></li>
+                                <li><a href="${rootPath}user/toUpdate?id=${user.id}"><span><img src="${rootPath}images/user.png" width="20px" height="28px"/><span style="padding-top:5px">${user.username}</span></span></a></li>
                                 <li><a href="${rootPath}logout"><span><img src="${rootPath}images/logout.png" width="20px" height="28px"/></span></a></li>
                             </ul>
                     </ul>
@@ -60,7 +60,7 @@
 		
 			<div class="input-group" style="float:right">
 				<form id="_searchForm" action="${rootPath}user/find" method="get" onsubmit="return _search();">	
-					<a href="${rootPath}/user/toAdd" style="margin: 0 10px 10px 0;list-style:none;text-decoration: none" data-toggle="Modal" data-target="#myModal">添加</a>	
+					<a href="${rootPath}user/toAdd" style="margin: 0 10px 10px 0;list-style:none;text-decoration: none" data-toggle="Modal" data-target="#myModal">添加</a>	
 					<input type="text" id="search" name="search" class="form-control">
 					<input type="submit" value="搜索"  class="btn btn-default btn-primary" onclick="_search();" style="margin-top:-10px">	
 				</form>

@@ -7,6 +7,11 @@ import cn.jxy.sdnweb.dao.IWeightDao;
 import cn.jxy.sdnweb.entity.NodeRelation;
 import cn.jxy.sdnweb.util.PageCut;
 
+/**
+ * 
+ * @author Administrator
+ *	路径数据层
+ */
 @Repository
 public class WeightDaoImpl extends BaseDao<NodeRelation> implements IWeightDao {
 

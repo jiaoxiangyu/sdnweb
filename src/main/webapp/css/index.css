@@ -1,14 +1,17 @@
+body{
+	min-width:1300px;
+}
 .wrapper{
 	height: 100%;
 	overflow: hidden;
 	zoom: 1;
-	min-height: 650px;
+	min-height: 700px;
 }
 .left{
-	width:50%;
+	width:48%;
 	box-sizing: border-box;
 	float: left;
-	border-right:1px solid grey;
+	
 }
 .right{
 	float: right;
@@ -16,6 +19,7 @@
 	overflow-y: scroll;
 	box-sizing: border-box;
 	height: 100%;
+	border-left:1px solid grey;
 }
 .tablelist{
 	height：auto;
@@ -95,5 +99,15 @@
   cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd;
+}
+.export{
+	font-size:16px;
+	position:relative;
+	left:350px;
+	top:-30px;
+}
+.export a{
+	text-decoration: none;
+	list-style: none;
 }
 
